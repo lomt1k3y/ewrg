@@ -12,6 +12,8 @@ use App\Http\Controllers\HomeController;
 Route::get('/home', [HomeController::class, 'show']);
 
 Route::get('/reg', [RegistrController::class, 'form']);
+Route::group( [ 'middleware' => 'admin', 'prefix' => 'admin' ], function () {
+    }); // админский роут
 
 Route::get('/kat', [KatalogController::class, 'kat']
 )->where (['num1'=>'[0-9]+']);
