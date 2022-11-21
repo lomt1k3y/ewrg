@@ -13,4 +13,5 @@ Route::get('/home', [HomeController::class, 'show']);
 
 Route::get('/reg', [RegistrController::class, 'form']);
 
-
+Route::get('/kat', [KatalogController::class, 'kat']
+)->where (['num1'=>'[0-9]+']);
